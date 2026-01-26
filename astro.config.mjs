@@ -10,9 +10,12 @@ export default defineConfig({
 	integrations: [
 		// Startlight-specific config
 		starlight({
-			title: 'Owen\'s DevLog',
+			title: 'Tanaka\'s DevLog',
 			sidebar: [
 				{ label: 'Schedule', autogenerate: { directory: 'schedule' }, },
+			],
+			customCss: [
+				'./src/styles/custom.css', // relative path to custom CSS file
 			],
 		}),
 	],

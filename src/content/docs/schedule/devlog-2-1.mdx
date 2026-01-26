@@ -13,6 +13,11 @@ https://omundy.github.io/dig345-radical-software/tutorials/astro-starlight-examp
 
 */}
 
+import { Icon } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+<Icon name="open-book" />  Learn more about [icons](https://starlight.astro.build/reference/icons/#all-icons)
+
 #### Create an Astro Starlight DevLog site
 
 Follow the [Astro Starlight](https://omundy.github.io/dig345-radical-software/tutorials/astro-starlight/) tutorial to create a JAMstack website with Astro.js. You will use this site to post DevLog entries to record your work throughout the semester. 
@@ -21,9 +26,54 @@ Follow the [Astro Starlight](https://omundy.github.io/dig345-radical-software/tu
 1. Publish Astro Starlight using Github Actions ✏️ https://github.com/Makoninio/dig345-devlog
 1. Add custom CSS to your theme
 1. Import and use an Astro component
-1. Continue customizing your site using the [Starlight Docs](https://starlight.astro.build/getting-started/) and ✏️ explain what you did.
+1. Continue customizing your site using the [Starlight Docs](https://starlight.astro.build/getting-started/) and ✏️ Added Aside component to the bottom of `devlog-2-1.mdx` that holds my reading response
 1. Add content into: `devlog-1-3.mdx` (the DevLog from the previous week)
 1. Add this file and `devlog-2-1.mdx` for today, and add content.
 1. Watch 🎬 Heydon Pickering [Why is everything binary?](https://www.youtube.com/watch?v=LbjxvvKEtyE). Post a reading response in the 2-1 DevLog per information in the [Assignments](./assignments).
 1. Write a reflection explaining what you did learned in this DevLog. Link to sources.
+
+<Aside type="note" icon="starlight" title="DevLog Reflection">
+
+This devlog served as an introduction to the Astro web framework and highlighted its performance advantages, particularly its focus on speed and minimal JavaScript by default. 
+It also introduced Starlight as a tool for building clean, well-structured documentation sites with built-in styling and navigation. In addition, the devlog explored the benefits 
+and limitations of binary thinking, emphasizing how binary systems are efficient for machines but can oversimplify complex human experiences. 
+</Aside>
+
 1. Publish it and turn it in by posting the direct link to this DevLog on Moodle
+
+
+<Aside type="tip" icon="starlight" title="Reading Reflection">
+
+#### [Why everything is binary](https://www.youtube.com/watch?v=LbjxvvKEtyE)
+
+##### Summary
+
+The video explores how modern computing represents all content using binary (0s and 1s). Heydon Pickering proceeds to explain how binary thinking
+is not just limited to modern computing systems and instead is evident in how humans think about the world. While binary is efficient for machines,
+it heavily limits the human ability to go through the world because reality is too nuanced and complicated to be simplified to a series of binary decisions.
+Using examples such as the human brain and the design of organisations, Pickering highlights how phenomena that should exist on a spectrum is often presented
+as being conflicting.
+
+##### Quote
+
+Supposedly, everyone's personality is switched to one side or the other. There is only one minor problem with thi theory. Its bollocks
+
+##### Comment
+
+This made me think about how as someone hoping to design software interfaces in the future, how easy it is to fall into the trap of forcing users into rigid categories 
+(yes/no, male/female, pass/fail) even when their real experiences are more complex. As someone building products and tools, this is a powerful reminder that technical 
+simplicity should not come at the cost of accurately representing human diversity and edge cases.
+
+##### Discussion Question
+
+How can we balance the need for simplicity in bnary systems and the reality that human experiences often exist on a spectrum
+
+##### Related Work 
+
+The ying yang is evidence that people have long understood that even the most contrary forces are actually deeply interconnected and interdependent.
+
+<a >
+  <img src="https://cdn.britannica.com/52/236052-050-5C9FE934/Yin-and-Yang-symbol.jpg" alt="A cat" width="400"/>
+</a>
+
+</Aside>
