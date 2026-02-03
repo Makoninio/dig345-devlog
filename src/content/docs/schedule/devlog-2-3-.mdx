@@ -1,7 +1,7 @@
 ---
 # Frontmatter section
-title: DevLog 1-3 
-description: DevLog 1-3
+title: DevLog 2-3 
+description: DevLog 2-3
 ---
 
 {/* 
@@ -15,15 +15,19 @@ https://omundy.github.io/dig345-radical-software/tutorials/astro-starlight-examp
 
 #### Create an Astro blog site 
 
-Follow [Astro's Build a Blog tutorial](https://docs.astro.build/en/tutorial/0-introduction/) to create a modular website using component-based design. Compare your finished blog site to the [tutorial example](https://github.com/withastro/blog-tutorial-demo/tree/complete) as needed. <DevLogInstructions />
+Follow [Astro's Build a Blog tutorial](https://docs.astro.build/en/tutorial/0-introduction/) to create a modular website using component-based design. Compare your finished blog site to the [tutorial example](https://github.com/withastro/blog-tutorial-demo/tree/complete) as needed. 
 
 
 1. Create a new Astro site and publish it on Netlify<sup>[1](https://docs.astro.build/en/tutorial/1-setup/)</sup>. Write the formatted command ✏️ here  using `backticks` so you remember it.  `npm create astro@latest`
 1. Create pages (`.astro` files) and blog posts (`.md` files) using frontmatter and file-based routing<sup>[2](https://docs.astro.build/en/tutorial/2-pages/)</sup>. 
 1. Use Astro [components](https://docs.astro.build/en/basics/astro-components/) (also `.astro` files!) to reuse common code across your website<sup>[3](https://docs.astro.build/en/tutorial/3-components/)</sup>. 
 1. Create reusable layout components using `<slot />` and `Astro.props` to inject child content<sup>[4](https://docs.astro.build/en/tutorial/4-layouts/)</sup>. 
-1. Create layout components for markdown files. Share anything that was difficult so far ✏️ here. I completed the devlog having competed the tutorial. I did not have any challenges with the tutorial but as 
-I was completing item 9 (Modifying an existing site) I attempted to recreate the Hurt Hub page which is run in Wordpress. I struggled with the styling and formating of the page.
+1. Create layout components for markdown files. Share anything that was difficult so far ✏️ here. <div></div>
+I completed the devlog having competed the tutorial. I did not have any challenges with the tutorial but as  I was completing item 9 
+(Modifying an existing site) I attempted to recreate the Hurt Hub page which is run in Wordpress. I struggled with the 
+styling and formating of the page. For example with the navbar, I ran into an issue with space. I tried to add the text Hurt Hub next to the logo
+but it kept clipping over the left side of the navbar. When I made the css size dynamic the text completely dissapeared. I am not sure if
+this was a fault on my part or if the astro formating keeps everything in a larger container which restricts the width of the page elements. <div></div>
 1. Display a dynamically generated list of posts on your Blog page<sup>[5](https://docs.astro.build/en/tutorial/5-astro-api/)</sup>. 
 1. Use Dynamic page routing with [`getStaticPaths()`](https://docs.astro.build/en/tutorial/5-astro-api/2/) to specify and store static routes during build, and pass each page its own props.
 1. Install Astro [Preact](https://preactjs.com/) integration. Use a `client:` directive for hydration on a UI framework component<sup>[6](https://docs.astro.build/en/tutorial/6-islands/1/)</sup>. 🔥 Challenge: Already have experience with a UI library? Try to [integrate](https://docs.astro.build/en/guides/integrations-guide/) that one instead! For example, I used Svelte.
