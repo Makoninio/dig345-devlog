@@ -1,0 +1,119 @@
+---
+# Frontmatter section
+title: DevLog 3-3 
+description: DevLog 3-3
+---
+
+{/* 
+
+COPY / USE THIS TEMPLATE FOR EACH WEEK 
+
+See this page for example codes
+https://omundy.github.io/dig345-radical-software/tutorials/astro-starlight-examples/
+
+*/}
+
+import { Aside } from '@astrojs/starlight/components';
+
+### DevLog 3-3 
+
+#### Create a full stack application using Node and Express
+
+Create a full stack application following Chapter 9 of Critical Web Design and the [Bad Password API Node/Express](https://criticalwebdesign.github.io/wiki/chapter-09/9-4-bad-password-api/) tutorial.
+
+1. Read 📚 Chapter 9 in Critical Web Design. ✏️ Write a reflection about the Context for this chapter.
+
+    <Aside type="tip" icon="starlight" title="Reading Reflection">
+
+    #### Chapter 9 in Critical Web Design
+
+    ##### Summary
+
+    Chapter 9 explores how modern web technologies allow for the data tracking and surveillance of many internet users.The 
+    chapter examines how everyday users interact with web infrastructure such as cookies, APIs, analytics tools, and 
+    servers which collect and analyse of user behavior information. The book sees tracking as more than something purely 
+    technical, but frames it as a socio-political issue closely tied power dynamics, wealth and techno-capitalism. It 
+    discusses how surveillance can reinforce inequalities by allowing institutions to observe and influence 
+    users without equivalent transparency or control. Additionally, the chapter introduces legal and ethical frameworks such 
+    as GDPR and “Rights of the Data Subject,” emphasizing that users should have agency over their data. 
+
+    ##### Quote
+
+    In their book, Supervision, John Gilliom and Torin Monahan say we live in a sur-
+    veillance society, where “virtually all significant social, institutional, or business
+    activities in our society now involve the systematic monitoring, gathering, and analy-
+    sis of information in order to make decisions, minimize risk, sort populations, and
+    exercise power.”
+
+    ##### Comment
+
+    The chapter made me realize the deep power inbalance that exists as a conseequence of constant surveillance. As someone who
+    has always been drawn to development, I have often justified tracking as improving personalization or analytics, but this 
+    chapter challenges that assumption by reframing tracking as a design choice that redistributes power. It makes me 
+    reconsider how backend logging, API requests, and analytics dashboards might unintentionally reinforce systems of 
+    control rather than simply improving user experience.
+
+    ##### Discussion Question
+
+    Is data collection is inherently tied to power?
+
+    ##### Related Work 
+
+    The Netflix documentary The Social Dilemma explores these themes of data collection as they relate to power assymetry and 
+    ultimately techno-capitalism. That documentary and this chapter share in common similar concerns, driving forward questions
+    about the future of the web and how we can correct the great imbalance. https://www.youtube.com/watch?v=uaaC57tcci0
+
+    </Aside>
+1. Fork an existing Github project ([criticalwebdesign/bad-password-api-starter](https://github.com/criticalwebdesign/bad-password-api-starter)) (CWD 9.3)
+1. Connect to a remote API and use JSON data in a frontend (CWD 9.3)
+1. Modify the project structure, install dependencies, and run the project. (CWD 9.4) 
+1. Add static and dynamic API routes using Express.  (CWD 9.4) 
+1. Create a free Vercel account  (CWD 9.4) 
+1. Deploy your project on Vercel. (CWD 9.4)  Paste the link ✏️ https://bad-password-api-starter-theta.vercel.app/ 
+1. Read 📚 [Hacktivist deletes white supremacist websites live onstage during hacker conference](https://techcrunch.com/2026/01/05/hacktivist-deletes-white-supremacist-websites-live-on-stage-during-hacker-conference/), TechCrunch 2026 Post a reading response in your DevLog per information in the [Assignments](./#assignments).
+
+    <Aside type="tip" icon="starlight" title="Reading Reflection">
+
+    #### Hacktivist deletes white supremacist websites
+
+    ##### Summary
+
+    The article tells the story of how a hacktivist named "Martha Root" who deleted 3 white supremacist websites during the annual Chaos 
+    Communication Congress in Hamburg, Germany. The sites included a dating platform for extremists, a reproductive matching site for 
+    white supremacists, and a labor marketplace serving these communities. During the presentation, Root demonstrated how poor 
+    cybersecurity practices and weak verification systems allowed them to infiltrate the platforms using AI chatbots, scrape user data, 
+    and ultimately wipe the servers hosting the sites.
+
+    ##### Quote
+
+    A German hacker known as "Martha Root" dressed as a pink Power Ranger and deleted a white supremacist dating website live onstage
+
+    ##### Comment
+
+    The article presents an interesting question about the ethics of dismantling harmful platforms, even when the method used raises 
+    questions about whether destructive hacking is a legitimate form of accountability or a dangerous precedent.
+
+    ##### Discussion Question
+
+    When hacktivism targets harmful or extremist platforms, where should we draw the ethical line between digital activism and digital crimes?
+
+    ##### Related Work
+
+    https://www.youtube.com/watch?v=1CgKAegIXZw. The liked video gives a short introduction to Kevin Mitnick who was one of the world's most 
+    prominent hackers. This is related because he is someone highly revered but used his skill to defraud businesses. This contrasts the 
+    positive use of hacking by Martha Root
+
+    </Aside>
+1. Write a reflection explaining what you learned in your DevLog. Link to sources. ✏️
+
+    Reading this article alongside Chapter 9 changed how I think about security, surveillance, and responsibility as a developer. 
+    Before, I often viewed tracking infrastructure mainly as a corporate issue tied to advertising and analytics. However, this 
+    example shows that surveillance and data collection can also create vulnerabilities that expose users to harm. The extremist 
+    platforms collected detailed user information without sufficient security, demonstrating how data accumulation increases risk even 
+    for the organizations collecting it. As someone interested in development, this makes me reflect on how backend design decisions, API security, and data practices are 
+    inherently ethical choices.
+
+    On the more technical side, during the devlog I learned to create static and dynamic API routes using Express, structure requests and responses 
+    using JSON, connect frontend interfaces to remote APIs using fetch() and deploy a full-stack application using Vercel.
+
+1. Publish it and turn it in by posting the direct link to this DevLog on Moodle. 
