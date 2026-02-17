@@ -1,0 +1,88 @@
+---
+# Frontmatter section
+title: DevLog 4-3 
+description: DevLog 4-3
+---
+import { Aside } from '@astrojs/starlight/components';
+
+{/* 
+
+COPY / USE THIS TEMPLATE FOR EACH WEEK 
+
+See this page for example codes
+https://omundy.github.io/dig345-radical-software/tutorials/astro-starlight-examples/
+
+*/}
+
+### DevLog 4-3 
+
+#### Create a database-driven application using Node/Express/MongoDB 
+
+Use Node.js and MongoDB Atlas to create the back end for Big Feelings. Then publish your full-stack application on Vercel. Follow Modules 10.3 in Critical Web Design and [Module 10.4 on the CWD Wiki](https://criticalwebdesign.github.io/wiki/chapter-10/10-4-big-feelings/) to complete your DevLog. 
+
+1. Fork the [criticalwebdesign/big-feelings-starter](https://github.com/criticalwebdesign/big-feelings-starter) and update it per Module 10.3. 
+1. Modify the project structure, install dependencies, and run the project.
+1. Create a MongoDB Database (CWD 10.4)
+1. Create an `.ENV` file, add your connection credentials, and test your database connection (CWD 10.4)
+1. Add routes to get data from MongoDB (CWD 10.4)
+1. Allow Visitors to Submit Feelings (CWD 10.4) 
+1. Add an environment variable and deploy your project on Vercel. (CWD 10.4) ✏️ 
+    Livesite: https://big-feelings-starter.vercel.app/
+1. Read 📚 [ICE Is Going on a Surveillance Shopping Spree](https://www.eff.org/deeplinks/2026/01/ice-going-surveillance-shopping-spree), EFF 2026. Post a reading response in your DevLog per information in the [Assignments](./#assignments). ✏️
+
+    <Aside type="tip" icon="starlight" title="Reading Reflection">
+
+    ####  ICE Is Going on a Surveillance Shopping Spree
+
+    ##### Summary
+
+    The article examines the rapid expansion of surveillance technologies used by U.S. Immigration and Customs Enforcement (ICE)
+     and the growing role of private technology companies in enabling large-scale monitoring systems. It describes how ICE’s 
+     significantly increased budget has allowed the agency to invest in tools such as phone extraction software, spyware, 
+     biometric recognition, automated license plate readers, and AI-powered social media analysis platforms. These technologies
+      allow ICE to aggregate data from government agencies, private companies, and public digital activity to build detailed 
+      profiles of individuals. The article argues that this growing surveillance infrastructure raises serious concerns about 
+      civil liberties, transparency, and democratic accountability, especially since these systems can affect not only 
+      undocumented immigrants but also legal residents and U.S. citizens.
+
+    ##### Quote
+
+    On a long enough timeline, any surveillance tool you build will eventually be used by people you don’t like for reasons 
+    that you disagree with. A surveillance-industrial complex and a democratic society are fundamentally incompatible, regardless 
+    of your political party. 
+
+    ##### Comment
+
+    The article raises important ethical questions about how surveillance technologies evolve beyond their original intended 
+    purposes. While governments often justify these tools in the name of security or enforcement, the scale and interconnected
+     nature of modern data systems make it difficult to prevent misuse.
+
+    ##### Discussion Question
+
+    Given how hard it is to predict the use of large-scale surveillance technology, explain the responsibilities of engineers 
+    druing deployment in guarding against unethical uses of their technology.
+
+    ##### Related Work
+
+    https://thedavidsonian.news/2103/news/palantir-employees-cancel-matthews-center-event-following-student-pushback/. My related Work
+    is an article from the Davidsonian discussing the cancelation of a career program by the Mathew's Center after students pushed
+    against Palantir. This piece raises questions about the role of educational institutions in producing talent that goes off to Work
+    for organizations in the surveillance sector
+
+    </Aside>
+
+1. Write a reflection explaining what you did learned in your DevLog. Link to sources. ✏️
+
+    In this DevLog, one of the biggest things I learned was how MongoDB differs from traditional relational databases and how that 
+    changes the way you think about structuring data. Coming from working with SQL and relational schemas, I am used to defining 
+    strict tables, relationships, and normalized structures before building an application. MongoDB introduced a more flexible, 
+    document-based approach where data is stored as JSON-like objects instead of rows and columns. This made it easier to quickly 
+    store user-generated data, like the “feelings” submissions, without needing to design a rigid schema ahead of time. 
+
+    Sources: 
+    https://www.mongodb.com/resources/compare/relational-vs-non-relational-databases
+    https://criticalwebdesign.github.io/wiki/chapter-10/10-4-big-feelings/
+
+1. Publish it on Vercel and turn it in by posting the direct link to this DevLog on Moodle
+
+
