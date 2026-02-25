@@ -1,0 +1,78 @@
+---
+# Frontmatter section
+title: DevLog 5-3 
+description: DevLog 5-3
+---
+import { Aside } from '@astrojs/starlight/components';
+import recordingVideo from '../../video/Recording.mp4';
+
+{/* 
+
+COPY / USE THIS TEMPLATE FOR EACH WEEK 
+
+See this page for example codes
+https://omundy.github.io/dig345-radical-software/tutorials/astro-starlight-examples/
+
+*/}
+
+## 5-3 Music 
+
+### DevLog 5-3  
+
+#### Create an interactive sound experience
+
+1. Review the [Sound & Music page](/dig345-radical-software/tutorials/sound-music) to learn Tone.js and Strudel.
+1. Complete the Strudel [First Sounds](https://strudel.cc/workshop/first-sounds/) tutorial. Post a link to your finished REPL ✏️ <a href='https://strudel.cc/#Ly8gc291bmQoImNhc2lvIikKLy8gc291bmQoImNhc2lvOjEiKQovLyBzb3VuZCgiYmQgaGggc2Qgb2giKQovLyBzb3VuZCgiYmQgaGggc2Qgb2giKS5iYW5rKCJSb2xhbmRUUjkwOSIpCi8vIHNvdW5kKCJiZCBoaCBzZCBoaCIpCi8vIHNvdW5kKCJiZCBiZCBoaCBiZCByaW0gYmQgaGggYmQiKQovLyBzb3VuZCgiPGJkIGJkIGhoIGJkIHJpbSBiZCBoaCBiZD4iKQovLyBzb3VuZCgiPGJkIGJkIGhoIGJkIHJpbSBiZCBoaCBiZD4qOCIpCi8vIHNldGNwbSg5MC80KQovLyBzb3VuZCgiPGJkIGhoIHJpbSBoaD4qOCIpCgpzZXRjcG0oMTAwLzQpCnNvdW5kKCJbYmQgc2RdKjIsIGhoKjgiKS5iYW5rKCJSb2xhbmRUUjUwNSIpCi8qCi8vIENsYXNzaWMgaG91c2UKc291bmQoImJkKjQsIFstIGNwXSoyLCBbLSBoaF0qNCIpLmJhbmsoIlJvbGFuZFRSOTA5IikKCgpzZXRjcG0oODEvMikKc291bmQoImJkKjIgY3AiKS5iYW5rKCJSb2xhbmRUUjcwNyIpCgoKc2V0Y3BtKDEyMC8yKQpzb3VuZCgiYmQgc2QsIC0gLSAtIGhoIC0gaGggLSAtLCAtIHBlcmMgLSBwZXJjOjEqMiIpCi5iYW5rKCJSb2xhbmRDb21wdXJoeXRobTEwMDAiKQoKCnNldGNwbSg5MC80KQpzb3VuZChgClstICAtICBvaCAtIF0gWy0gIC0gIC0gIC0gXSBbLSAgLSAgLSAgLSBdIFstICAtICAtICAtIF0sCltoaCBoaCAtICAtIF0gW2hoIC0gIGhoIC0gXSBbaGggLSAgaGggLSBdIFtoaCAtICBoaCAtIF0sClstICAtICAtICAtIF0gW2NwIC0gIC0gIC0gXSBbLSAgLSAgLSAgLSBdIFtjcCAtICAtICAtIF0sCltiZCAtICAtICAtIF0gWy0gIC0gIC0gIGJkXSBbLSAgLSAgYmQgLSBdIFstICAtICAtICBiZF0KYCkKCgpzZXRjcG0oODgvNCkKc291bmQoYApbLSAgLSAgLSAgLSBdIFstICAtICAtICAtIF0gWy0gIC0gIC0gIC0gXSBbLSAgLSAgb2g6MSAtIF0sCltoaCBoaCBoaCBoaF0gW2hoIGhoIGhoIGhoXSBbaGggaGggaGggaGhdIFtoaCBoaCAtICAtIF0sClstICAtICAtICAtIF0gW2NwIC0gIC0gIC0gXSBbLSAgLSAgLSAgLSBdIFt%2BICBjcCAtICAtIF0sCltiZCBiZCAtICAtIF0gWy0gIC0gIGJkIC0gXSBbYmQgYmQgLSBiZCBdIFstICAtICAtICAtIF0KYCkuYmFuaygiUm9sYW5kVFI4MDgiKQoqLwoKLyoKc2V0Y3BtKDEwMC8yKQpzKGBqYXp6KjIsIAppbnNlY3QgW2Nyb3cgbWV0YWxdIC0gLSwgCi0gc3BhY2U6NCAtIHNwYWNlOjEsCi0gd2luZGApCiov'>First Sounds</a>
+1. Complete the Strudel [First Notes](https://strudel.cc/workshop/first-notes/) tutorial. Post a link to your finished REPL ✏️ <a href='https://strudel.cc/#Ly8gbm90ZSgiNDggNTIgNTUgNTkiKS5zb3VuZCgicGlhbm8iKQovLyBub3RlKCJjIGUgZyBiIikuc291bmQoInBpYW5vIikKLy8gbm90ZSgiZGIgZWIgZ2IgYWIgYmIiKS5zb3VuZCgicGlhbm8iKQovLyBub3RlKCJjIyBkIyBmIyBnIyBhIyIpLnNvdW5kKCJwaWFubyIpCi8vIG5vdGUoImMyIGUzIGc0IGI1Iikuc291bmQoInBpYW5vIikKLy8gbm90ZSgiMzYgNDMsIDUyIDU5IDYyIDY0Iikuc291bmQoInRyaWFuZ2xlIikKCi8vIG5vdGUoIjQ4IDY3IDYzIFs2MiwgNThdIikKLy8gLnNvdW5kKCJwaWFubyBnbV9lbGVjdHJpY19ndWl0YXJfbXV0ZWQiKQoKLy8gbm90ZSgiNDggNjcgNjMgWzYyLCA1OF0iKQovLyAuc291bmQoInBpYW5vLCBnbV9lbGVjdHJpY19ndWl0YXJfbXV0ZWQiKQoKLy8gbm90ZSgiWzM2IDM0IDQxIDM5XS80Iikuc291bmQoImdtX2Fjb3VzdGljX2Jhc3MiKQoKLy8gbm90ZSgiPDM2IDM0IDQxIDM5PiIpLnNvdW5kKCJnbV9hY291c3RpY19iYXNzIikKCi8vIG5vdGUoIjxbMzYgNDhdKjQgWzM0IDQ2XSo0IFs0MSA1M10qNCBbMzkgNTFdKjQ%2BIikuc291bmQoImdtX2Fjb3VzdGljX2Jhc3MiKQoKLyoKbm90ZSgiNjAgPDYzIDYyIDY1IDYzPiIpCi5zb3VuZCgiZ21feHlsb3Bob25lIikKCnNvdW5kKCJiZCo0LCBbfiA8c2QgY3A%2BXSoyLCBbfiBoaF0qNCIpCi5iYW5rKCJSb2xhbmRUUjkwOSIpCgpzZXRjcG0oNjApCm4oIjAgMiA0IDxbNiw4XSBbNyw5XT4iKQouc2NhbGUoIkM6bWlub3IiKS5zb3VuZCgicGlhbm8iKQoKc2V0Y3BtKDYwKQpuKCIwIDIgNCA8WzYsOF0gWzcsOV0%2BIikKLnNjYWxlKCJDOm1pbm9yIikuc291bmQoInBpYW5vIikKCnNldGNwbSg2MCkKbigiMCAyIDQgPFs2LDhdIFs3LDldPiIpCi5zY2FsZSgiQzptaW5vciIpLnNvdW5kKCJwaWFubyIpCgoKLy8gQ2xhc3N5IEJhc2VsaW5lCnNldGNwbSg2MCkKbigiMCAyIDQgPFs2LDhdIFs3LDldPiIpCi5zY2FsZSgiQzptaW5vciIpLnNvdW5kKCJwaWFubyIpCgovLyBDbGFzc3kgTWVsb2R5Cm4oYDwKW34gMF0gMiBbMCAyXSBbfiAyXQpbfiAwXSAxIFswIDFdIFt%2BIDFdClt%2BIDBdIDMgWzAgM10gW34gM10KW34gMF0gMiBbMCAyXSBbfiAyXQo%2BKjRgKS5zY2FsZSgiQzQ6bWlub3IiKQouc291bmQoImdtX3N5bnRoX3N0cmluZ3NfMSIpCgovLyBDbGFzc3kgRHJ1bXMKc291bmQoImJkKjQsIFt%2BIDxzZCBjcD5dKjIsIFt%2BIGhoXSo0IikKLmJhbmsoIlJvbGFuZFRSOTA5IikKKi8KCiQ6IG5vdGUoIjxbYzIgYzNdKjQgW2JiMSBiYjJdKjQgW2YyIGYzXSo0IFtlYjIgZWIzXSo0PiIpCi5zb3VuZCgiZ21fc3ludGhfYmFzc18xIikubHBmKDgwMCkKCiQ6IG4oYDwKW34gMF0gMiBbMCAyXSBbfiAyXQpbfiAwXSAxIFswIDFdIFt%2BIDFdClt%2BIDBdIDMgWzAgM10gW34gM10KW34gMF0gMiBbMCAyXSBbfiAyXQo%2BKjRgKS5zY2FsZSgiQzQ6bWlub3IiKQouc291bmQoImdtX3N5bnRoX3N0cmluZ3NfMSIpCgokOiBzb3VuZCgiYmQqNCwgW34gPHNkIGNwPl0qMiwgW34gaGhdKjQiKQouYmFuaygiUm9sYW5kVFI5MDkiKQo%3D'>First Notes</a>.
+1. Complete the Strudel [First Effects](https://strudel.cc/workshop/first-effects/) tutorial. Post a link to your finished REPL ✏️ <a href='https://strudel.cc/#LyoKbm90ZSgiPFtjMiBjM10qNCBbYmIxIGJiMl0qNCBbZjIgZjNdKjQgW2ViMiBlYjNdKjQ%2BIikKLnNvdW5kKCJzYXd0b290aCIpLmxwZig4MDApCgpub3RlKCI8W2MyIGMzXSo0IFtiYjEgYmIyXSo0IFtmMiBmM10qNCBbZWIyIGViM10qND4iKQouc291bmQoInNhd3Rvb3RoIikubHBmKCIyMDAgMTAwMCAyMDAgMTAwMCIpCgpub3RlKCI8W2MzLGczLGU0XSBbYmIyLGYzLGQ0XSBbYTIsZjMsYzRdIFtiYjIsZzMsZWI0XT4iKQouc291bmQoInNhd3Rvb3RoIikudm93ZWwoIjxhIGUgaSBvPiIpCgokOiBzb3VuZCgiaGgqMTYiKS5nYWluKCJbLjI1IDFdKjQiKQokOiBzb3VuZCgiYmQqNCxbfiBzZDoxXSoyIikKCiQ6IHNvdW5kKCJoaCo4IikuZ2FpbigiWy4yNSAxXSo0IikKCiQ6IHNvdW5kKCJiZCo0LFt%2BIHNkOjFdKjIiKQoKJDogbm90ZSgiPFtjMiBjM10qNCBbYmIxIGJiMl0qNCBbZjIgZjNdKjQgW2ViMiBlYjNdKjQ%2BIikKLnNvdW5kKCJzYXd0b290aCIpLmxwZigiMjAwIDEwMDAgMjAwIDEwMDAiKQoKJDogbm90ZSgiPFtjMyxnMyxlNF0gW2JiMixmMyxkNF0gW2EyLGYzLGM0XSBbYmIyLGczLGViNF0%2BIikKLnNvdW5kKCJzYXd0b290aCIpLnZvd2VsKCI8YSBlIGkgbz4iKQoKbm90ZSgiYzMgYmIyIGYzIGViMyIpCi5zb3VuZCgic2F3dG9vdGgiKS5scGYoNjAwKQouYXR0YWNrKC4xKQouZGVjYXkoLjEpCi5zdXN0YWluKC4yNSkKLnJlbGVhc2UoLjIpCgpub3RlKCJjMyBiYjIgZjMgZWIzIikKLnNvdW5kKCJzYXd0b290aCIpLmxwZig2MDApCi5hZHNyKCIuMTouMTouNTouMiIpCgokOiBub3RlKCJbfiBbPFtkMyxhMyxmNF0hMiBbZDMsYmIzLGc0XSEyPiB%2BXV0qMiIpCi5zb3VuZCgiZ21fZWxlY3RyaWNfZ3VpdGFyX211dGVkIikuZGVsYXkoLjUpCgokOiBzb3VuZCgiYmQgcmltIikuYmFuaygiUm9sYW5kVFI3MDciKS5kZWxheSgiLjUiKQoKbigiPDQgWzNAMyA0XSBbPDIgMD4gfkAxNl0gfj4iKQouc2NhbGUoIkQ0Om1pbm9yIikuc291bmQoImdtX2FjY29yZGlvbjoyIikKLnJvb20oMikKCiQ6IG5vdGUoIlt%2BIFs8W2QzLGEzLGY0XSEyIFtkMyxiYjMsZzRdITI%2BIH5dXSoyIikKLnNvdW5kKCJnbV9lbGVjdHJpY19ndWl0YXJfbXV0ZWQiKS5kZWxheSguNSkKCiQ6IHNvdW5kKCJiZCByaW0iKS5iYW5rKCJSb2xhbmRUUjcwNyIpLmRlbGF5KC41KQoKJDogbigiPDQgWzNAMyA0XSBbPDIgMD4gfkAxNl0gfj4iKQouc2NhbGUoIkQ0Om1pbm9yIikuc291bmQoImdtX2FjY29yZGlvbjoyIikKLnJvb20oMikuZ2FpbiguNSkKCgokOiBub3RlKCJbfiBbPFtkMyxhMyxmNF0hMiBbZDMsYmIzLGc0XSEyPiB%2BXV0qMiIpCi5zb3VuZCgiZ21fZWxlY3RyaWNfZ3VpdGFyX211dGVkIikuZGVsYXkoLjUpCgokOiBzb3VuZCgiYmQgcmltIikuYmFuaygiUm9sYW5kVFI3MDciKS5kZWxheSguNSkKCiQ6IG4oIjw0IFszQDMgNF0gWzwyIDA%2BIH5AMTZdIH4%2BIikKLnNjYWxlKCJENDptaW5vciIpLnNvdW5kKCJnbV9hY2NvcmRpb246MiIpCi5yb29tKDIpLmdhaW4oLjQpCgokOiBuKCJbMCBbfiAwXSA0IFszIDJdIFswIH5dIFswIH5dIDwwIDI%2BIH5dLzIiKQouc2NhbGUoIkQyOm1pbm9yIikKLnNvdW5kKCJzYXd0b290aCx0cmlhbmdsZSIpLmxwZig4MDApCgpzb3VuZCgibnVtYmVyczoxIG51bWJlcnM6MiBudW1iZXJzOjMgbnVtYmVyczo0IikKLnBhbigiMCAwLjMgLjYgMSIpCgpzb3VuZCgiYmQgcmltIFt%2BIGJkXSByaW0iKS5zcGVlZCgiPDEgMiAtMSAtMj4iKS5yb29tKC4yKQoKc291bmQoImJkKjQsfiByaW0gfiBjcCIpLnNsb3coMikKCnNvdW5kKCJbYmQqNCx%2BIHJpbSB%2BIGNwXSo8MSBbMiA0XT4iKQoKc291bmQoImhoKjE2IikuZ2FpbihzaW5lKQoKc291bmQoImhoKjE2IikubHBmKHNhdy5yYW5nZSg1MDAsIDIwMDApKQoqLwoKbm90ZSgiPFtjMiBjM10qNCBbYmIxIGJiMl0qNCBbZjIgZjNdKjQgW2ViMiBlYjNdKjQ%2BIikKLnNvdW5kKCJzYXd0b290aCIpCi5scGYoc2luZS5yYW5nZSgxMDAsIDIwMDApLnNsb3coNCkp'>First Effects.</a> 
+1. [Music Mouse Explained | Laurie Spiegel on Algorithmic Composition (1987 Archive)](https://www.youtube.com/watch?v=aJBDHxyLEHg) (27:38). Post a reading response in your DevLog per information in the [Assignments](./#assignments).
+
+    <Aside type="tip" icon="starlight" title="Reading Reflection">
+
+    ####  Music Mouse Explained | Laurie Spiegel on Algorithmic Composition
+
+    ##### Summary
+
+    In this interview, Laurie Spiegel introduces Music Mouse, a software instrument designed to turn the Macintosh into something you can actually perform music with instead of just editing or sequencing sounds. The program uses algorithms to handle harmony in real time while the user controls melodic movement through spatial gestures with a mouse or trackball. Her goal is to make music creation more accessible by lowering technical barriers while still allowing expressive improvisation. Spiegel also highlights how innovation in music technology isn’t just about new sounds, but about designing new interaction methods that change how people relate to making music.
+
+    ##### Quote
+
+    “Unlike the majority of music software available out there, this is not an editor in any way. This is actually a program which turns the Macintosh into an instrument which you play.”
+
+    ##### Comment
+
+    What stood out to me is how forward-thinking Spiegel’s approach is, especially around interaction design and accessibility. She shifts the focus away from technical skill and toward expression and creativity, which feels very aligned with modern HCI ideas. Instead of requiring deep musical training, the software helps guide the user while still leaving room for personal control. In many ways, Music Mouse feels like an early version of today’s generative music tools or AI-assisted creative platforms, where the system supports the creative process without fully taking over.
+
+    ##### Discussion Question
+
+    How much should software help create music before it starts taking away from the artist’s creativity and control?
+
+    ##### Related Work
+
+    A good comparison is tools like <a href="https://www.ableton.com/en/live/">Ableton Live</a>, Tone.js, or modern AI music generators. Like Music Mouse, these platforms focus more on live experimentation and interaction instead of pre-planning everything ahead of time. Ableton, for example, lets you trigger and manipulate sounds in real time, which makes music creation feel more like performance. Similarly, generative music tools build musical logic directly into the system, supporting creativity while still giving the user control, which reflects Spiegel’s idea of creating “intelligent instruments.”
+
+    </Aside>
+
+1. Complete all five parts of the [Getting Started with Tone.js | Web Audio Tutorial - Pts 1-5](https://www.youtube.com/watch?v=ftGuDvm5zDQ&list=PLMPgoZdlPumfkA6iYubXHyrRtdIg9T3Na) (3:31, 6:37, 10:20, 5:59, 9:28). Post a link to your finished project online ✏️ <a href="https://makoninio.github.io/Tone.js-intro/">Finished Project</a>.
+1. Explore the inspiring examples below. 
+1. Design and code an "interactive audio experience" that makes use of Tone.js. Consider using shapes, color, and other visuals in addition to sounds. This need not be fancy or polished, since you have less than a week to complete it. Try to have fun creating.
+1. Post designs mockups (pencil/paper, Figma, etc.) here. ✏️ <a href="https://www.figma.com/design/c5xsaoQtqSxl3UDno4VKRA/Born-Sinner?node-id=0-1&p=f&t=QXeZpPdQjlgIm1x4-0">Figma</a>
+1. Post links to your project, a video, and a 100-150 word statement about the concept and technology of your interactive audio experience ✏️ here.
+    <Aside title="Project">
+        <a href="https://makoninio.github.io/Born-Sinner/"><h1>Visit Project</h1></a>
+        <br></br>
+        <p>The project was inspired by Michelle Pera-McGhee's <a href="https://pudding.cool/2023/06/groove/">WONKY</a> digital story of QuestLove's experience producing a beat. This digital story book
+        creates an interactive audio and visual experience for the user that struck a chord in a non-technical music lover like myself. From a very young age I have always loved rap especially the process of producing
+        a beat. From the sampling through to adding the drum through to the mixing of the vocals, I appreciate all these parts of the craft. Given this, I love it when artists walk their fans through the production process
+        as it adds a deeper level of intimacy to the listening experience. Given this, I took to my favorite rapper "J Cole" and sort to retell the story of how he produced the beat for one of his biggest records "Power Trip". Using 
+        HTML, CSS and Javascript using Tone.js in particular for the interactive beat making component.</p>
+        <video controls width="600">
+        <source src={recordingVideo} type="video/mp4">
+        Your browser does not support the video tag.
+        </source>
+    </video>
+
+    </Aside>
+
+
+Optional Challenge: Use the Strudel [device motion](https://strudel.cc/learn/devicemotion/) and [input devices](https://strudel.cc/learn/input-devices/) to create your audio experience.
