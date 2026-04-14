@@ -1,0 +1,97 @@
+---
+# Frontmatter section
+title: DevLog 8-3 
+description: DevLog 8 - Minimum Viable Product
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import projectImage from '../../images/project Image.png';
+
+### DevLog 8-3 
+
+1. Share project link ✏️ 
+    <Aside title="Project Link" >
+        <a href="https://open-source-atlas.vercel.app/">Open Source Map (Live Prototype)</a>
+    </Aside>
+
+1. Working Proof of Concept ✏️
+    <Aside title="Working Proof of Concept">
+        I built an early version of an interactive map that tries to rethink how we measure success in 
+        open source.
+
+        Instead of just ranking projects by stars or popularity, the idea is to place them on a 2D map based 
+        on two dimensions: how quickly they deliver value and how much impact they have on the broader ecosystem.
+        This lets you explore projects spatially and start to see patterns in how different types of tools emerge 
+        and grow.
+
+        At this stage, the prototype shows that this idea actually works. Repositories can be meaningfully 
+        spread across this space, and interesting clusters start to appear. That said, it’s still early. The 
+        scoring system needs to be more grounded, and there’s a big opportunity to tell richer stories about each
+         project, especially around why it was created and how it evolved.
+    </Aside>
+
+1. Functionality That Proves Feasibility ✏️
+    <Aside title="Core Functionality">
+        The current version focuses on proving the concept works:
+            - A 2D map that places repositories using time to value score and ecosystem impact score
+            - Color-coded “islands” that group projects into categories like Infrastructure, Viral Tools, and Utility
+            - Hover and click interactions that surface key details like the project name, creator, and origin story
+            - A simple spreading mechanism to separate overlapping points and keep the map readable
+    </Aside>
+
+1. Visual of the Prototype ✏️
+    <Aside title="Prototype Visual">
+        <img src={projectImage.src} alt="Prototype map showing repositories distributed in a 2D space" /> <br></br>
+        Prototype visual
+    </Aside>
+
+1. Separation of Concerns ✏️
+    <Aside title="Separation of Concerns">
+        To me, separation of concerns means structuring the project so that each part has a clear responsibility 
+        and can be worked on independently.
+
+        In this prototype, I separated:
+        - Data (data.json) - stores repository information, scores, and categories <br></br>
+        - Rendering logic (React / App.jsx) - handles positioning and plotting of repositories <br></br>
+        - UI and styling - controls the visual appearance of the map <br></br>
+        - Interaction logic - manages hover and click behavior
+
+    </Aside>
+
+1. What I Struggled With ✏️
+    <Aside title="Challenges">
+        The biggest challenge was translating abstract ideas like “time to value” and “ecosystem impact” into numerical scores. 
+        These concepts are subjective, so assigning values required balancing intuition with consistency.
+
+        Another challenge was dataset distribution. Initially, most repositories clustered in the top half of the map, making the visualization 
+        feel unbalanced. I had to intentionally add more repositories in the lower regions to create a more meaningful spread.
+    </Aside>
+
+1. Most Helpful Resource ✏️
+    <Aside title="Helpful Resources">
+        https://pudding.cool/2026/02/happy-map/ — This visualization by the Pudding’s Alvin Change served as the inspiration for the re-drirection of my project <br></br>
+        Additionally, their breakdown of methodology for data and map development helped shape my approach to developing the new data set and
+        visualization <br></br><br></br>
+    </Aside>
+
+1. Top 3 Features to Implement Next ✏️
+    <Aside title="Next Steps">
+       Expand the dataset to include a wider range of repositories, making the map more representative and insightful <br></br><br></br>
+
+       Move beyond a static JSON file toward a more scalable and dynamic data pipeline <br></br><br></br>
+
+       Add a stronger storytelling layer, highlighting featured repositories and diving deeper into their origin stories <br></br><br></br>
+
+    </Aside>
+
+1. Reflection ✏️
+    <Aside title="Reflection">
+        This project started as an attempt to analyze open source success through traditional metrics like stars and forks. Over time, it shifted into something more exploratory.
+
+        The current version focuses on understanding success through a different lens. By mapping repositories across conceptual dimensions, it becomes possible to explore them 
+        spatially and see patterns that aren’t obvious in raw numbers alone.
+
+        Personally, this shift felt much more meaningful. Moving away from purely quantitative analysis toward a more story driven approach made 
+        the project more engaging and, in many ways, more insightful. It surfaces not just how 
+        projects perform, but what kind of impact they have and how they come to exist in the first place.
+    </Aside>
