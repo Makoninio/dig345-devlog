@@ -1,0 +1,109 @@
+---
+# Frontmatter section
+title: DevLog 10-3
+description: Final Project Deliverable
+sidebar:
+  order: 10
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import finalVideo from '../../video/Final_video.mp4';
+
+### Final Project Deliverables
+
+1. Updated Project Proposal ✏️ 
+    <Aside title="Updated Project Proposal">
+        <a href="https://docs.google.com/presentation/d/11OMqQBW-mFXw290mIkM-DPYgZvymFljv7eCkNRplheQ/edit?usp=sharing">
+            Updated Project Proposal
+        </a>
+        <br></br>
+        <iframe
+            src="https://docs.google.com/presentation/d/11OMqQBW-mFXw290mIkM-DPYgZvymFljv7eCkNRplheQ/embed?start=false&loop=false&delayms=3000"
+            title="Updated Project Proposal"
+            width="100%"
+            height="600"
+            allowfullscreen
+            style="border: 1px solid #ccc; border-radius: 8px;"
+        ></iframe>
+    </Aside>
+
+1. Project Video
+    <Aside title="Project Video">
+        <video controls width="100%">
+            <source src={finalVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </Aside>
+
+1. Concept and Execution
+     <Aside type="tip" icon="starlight" title="Concept and Execution">
+
+        #### Project Rationale
+
+        This project was created for DIG 345: Radical Software. This course asks us to build a project that challenges traditional software norms. Open source projects are often built in public, maintained collaboratively, and shaped by communities rather than a single company. Open source software challenges the idea that software must be proprietary, paid for, or built inside a company. Many of the tools developers rely on every day are created by distributed communities who care about a problem and choose to build in public. Thus open source software challenges traditional software production, not just economically, but socially and culturally.
+
+        This project attempts to achieve 2 main tasks:
+
+        - Center the stories of the developers who are building open source
+        - Answer the question: what does the open source community seem to value most?
+
+        To explore this question, I worked with a dataset of 500 repositories designed to provide a broad and holistic view of the open source world. Rather than focusing only on the most popular projects or presenting repositories as a simple ranking, I organized them into a vintage atlas of software territories. Each region represents a different kind of open source value, and each marker represents an individual repository.
+
+        #### Data Methodology
+
+        Repository data comes from a local JSON dataset built from the GitHub API. Rather than selecting only the most starred repositories, I wanted the dataset to represent different kinds of open source work, including infrastructure, utility tools, startup-oriented frameworks, viral developer tools, creative software, learning resources, and ambitious or more experimental projects.
+
+        Each repository in the dataset is organized around a consistent schema. The data includes the repository name, full GitHub path, URL, creator information, year created, and core metrics such as stars, forks, and contributors. Each project also includes a classification section with its assigned atlas region, a time-to-value score, and an ecosystem-impact score. These fields allow the visualization to position repositories not only by popularity, but also by the kind of value they appear to create within the broader open source world. Additionally, these categories are interpretive rather than absolute, often overlapping in purpose so this classification should be read as one way of understanding the ecosystem rather than a fixed universal classification.
+
+        The dataset also includes narrative fields for each repository. These include a short description, origin story, motivation, turning point, philosophy, story type, and links to external sources such as GitHub pages, homepages, articles, videos, or interviews when available.
+
+        #### Map Methodology
+
+        The atlas uses a map metaphor to turn the dataset into a navigable software landscape. Major categories become regions, and repositories are positioned as markers within those regions.
+
+        The x-axis represents time to value, or how quickly a project becomes useful. The y-axis represents ecosystem impact, or how foundational and influential a project is within the wider software landscape. The map works partly like a scatterplot, but it is not plotted on a strict Cartesian grid. Repositories are constrained into organic atlas territories, so the final layout balances data structure, spatial readability, and the visual language of a vintage map.
+
+        #### Technical Stack
+
+        The project is built with React and Vite. The atlas is rendered as an SVG map, with CSS defining the vintage visual system. D3 force/layout utilities are used to position repository markers so they spread naturally inside their regions. GSAP powers animated camera and zoom movement. Static JSON serves as the project's data source.
+
+        #### Interaction Design
+
+        Users can explore repositories by clicking markers, filtering by category or metadata, opening story cards, resetting the map view, and navigating the atlas through zoom and pan interactions.
+
+        The interface is designed as a bright vintage guidebook map rather than a dashboard. The goal is to make open source feel like a landscape that can be explored, not just a list that can be sorted.
+
+        #### Sources
+
+        Data collected from the GitHub API. Project created for DIG 345: Radical Software.
+
+    </Aside>
+
+1. Figma Designs ✏️
+    <Aside title="Figma Designs">
+        <a href="https://www.figma.com/design/t7EFBZrcUpkzXy0E6DQSWF/Open-Source-Atlas?node-id=0-1&p=f&t=oGCHO5qBuMxYFjOe-0">
+            Open Source Atlas Designs (Figma)
+        </a>
+        <br></br>
+        <iframe
+            style="border: 1px solid #ccc; border-radius: 8px;"
+            width="100%"
+            height="700"
+            src="https://embed.figma.com/design/t7EFBZrcUpkzXy0E6DQSWF/Open-Source-Atlas?node-id=0-1&embed-host=share"
+            allowfullscreen
+        ></iframe>
+    </Aside>
+
+1. Project Link
+    <Aside title="Final Project Link" >
+        <a href="https://open-source-atlas.vercel.app">Open Source Atlas</a>
+        <br></br>
+        <br></br>
+        <iframe
+            src="https://open-source-atlas.vercel.app"
+            title="Open Source Atlas"
+            width="100%"
+            height="1000"
+            style="border: 1px solid #ccc; border-radius: 8px;"
+        ></iframe>
+    </Aside>
